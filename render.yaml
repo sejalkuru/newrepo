@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: openai-chatbot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: chatBot
+        sync: false
